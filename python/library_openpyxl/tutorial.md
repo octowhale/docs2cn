@@ -94,12 +94,12 @@ True
 >>> d = ws.cell(row = 4, column = 2)
 ```
 
-> #### **Note**
+> ### Note
 >> 在worksheet在被创建时存在于内存中的。此时worksheet不包含任何单元格。 单元格将在第一次被访问时被创建。 此功能将不会创建不会访问的对象，从而达到可以节约内存的目的。
 
 <br>
 
-> #### **Warning**
+> ### Warning
 >> 正式因为此功能，当遍历所有单元格而非直接访问时，将会在内存中创建它们，即使你不为他们赋值。
 >>
 >> 比如说
@@ -183,7 +183,8 @@ True
 <Cell Sheet.C9>))
 ```
 
-### 数据储存 (Data storage)
+### 数据储存 
+### Data storage
 
 Once we have a openpyxl.cell.Cell, we can assign it a value:
 当我们获取了一个单元格`openpyxl.cell.Cell`之后，就可以给他赋值了：
@@ -216,7 +217,8 @@ datetime.datetime(2010, 9, 10, 22, 25, 18)
 31.5
 ```
 
-## 保存文件(Saving to a file)
+## 保存文件
+## Saving to a file
 The simplest and safest way to save a workbook is by using the openpyxl.workbook.Workbook.save() method of the openpyxl.workbook.Workbook object:
 使用`openpyxl.workbook.Workbook.save`方法是保存`openpyxl.workbook.Workbook`对象的最简单、最安全的方式。
 
@@ -253,7 +255,7 @@ The simplest and safest way to save a workbook is by using the openpyxl.workbook
 >>> wb.save('new_document.xlsx', as_template=False)
 ```
 
-> ###**Warning**
+> ### Warning 
 >> 在保存/打开文件时你需要监视(monitor)文档模板内的数据属性和文档扩展，否则在保存后的文档可能无法打开。
 >> You should monitor the data attributes and document extensions for saving documents in the document templates and vice versa, otherwise the result table engine can not open the document.
 
@@ -261,28 +263,28 @@ The simplest and safest way to save a workbook is by using the openpyxl.workbook
 <br>
 
 
-> ###**Note**
+> ### Note 
 >> 以下操作会失败：
 >>```python
->>  >>> wb = load_workbook('document.xlsx')
->>  >>> # Need to save with the extension *.xlsx
->>  >>> wb.save('new_document.xlsm')
->>  >>> # MS Excel can't open the document
->>  >>>
->>  >>> # or
->>  >>>
->>  >>> # Need specify attribute keep_vba=True
->>  >>> wb = load_workbook('document.xlsm')
->>  >>> wb.save('new_document.xlsm')
->>  >>> # MS Excel can't open the document
->>  >>>
->>  >>> # or
->>  >>>
->>  >>> wb = load_workbook('document.xltm', keep_vba=True)
->>  >>> # If us need template document, then we need specify extension as *.xltm.
->>  >>> # If us need document, then we need specify attribute as_template=False.
->>  >>> wb.save('new_document.xlsm', as_template=True)
->>  >>> # MS Excel can't open the document
+>> >>> wb = load_workbook('document.xlsx')
+>> >>> # Need to save with the extension *.xlsx
+>> >>> wb.save('new_document.xlsm')
+>> >>> # MS Excel can't open the document
+>> >>>
+>> >>> # or
+>> >>>
+>> >>> # Need specify attribute keep_vba=True
+>> >>> wb = load_workbook('document.xlsm')
+>> >>> wb.save('new_document.xlsm')
+>> >>> # MS Excel can't open the document
+>> >>>
+>> >>> # or
+>> >>>
+>> >>> wb = load_workbook('document.xltm', keep_vba=True)
+>> >>> # If us need template document, then we need specify extension as *.xltm.
+>> >>> # If us need document, then we need specify attribute as_template=False.
+>> >>> wb.save('new_document.xlsm', as_template=True)
+>> >>> # MS Excel can't open the document
 >>
 >>```
 
