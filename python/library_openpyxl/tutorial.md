@@ -1,12 +1,10 @@
 # 在内存中编辑workbook
-# Manipulating a workbook in memory
 
 [英文源地址](https://openpyxl.readthedocs.io/en/default/tutorial.html)
 
 ----------
 
 ## 创建workbook
-## Create a workbook
 
 使用openpyxl并不需要在系统上新建一个文件，只需引用Workbook类即可。
 
@@ -68,7 +66,7 @@ True
 
 ## 使用数据
 ### 访问单个单元格
-### Accessing one cell
+
 现在，我们知道怎样方位一个worksheet了，现在我们来学习如何改变单元格的内容。
 
 我们可以直接通过worksheet的键值（key）方位单元格。
@@ -117,7 +115,6 @@ True
 
 
 ### 访问多个单元格 
-### Accessing many cells
 
 单元格区块(Ranges of cells)可以通过切片方式访问。
 
@@ -186,7 +183,6 @@ True
 ```
 
 ### 数据储存 
-### Data storage
 
 Once we have a openpyxl.cell.Cell, we can assign it a value:
 当我们获取了一个单元格`openpyxl.cell.Cell`之后，就可以给他赋值了：
@@ -220,8 +216,6 @@ datetime.datetime(2010, 9, 10, 22, 25, 18)
 ```
 
 ## 保存文件
-## Saving to a file
-The simplest and safest way to save a workbook is by using the openpyxl.workbook.Workbook.save() method of the openpyxl.workbook.Workbook object:
 使用`openpyxl.workbook.Workbook.save`方法是保存`openpyxl.workbook.Workbook`对象的最简单、最安全的方式。
 
 ```python
@@ -292,7 +286,6 @@ The simplest and safest way to save a workbook is by using the openpyxl.workbook
 
 
 ## 加载一个文件
-## Loading from a file
 与保存文件一样，你可以通过导入`openpyxl.load_workbook()`开打一个已存在的workbook:
 
 ```python
