@@ -67,7 +67,8 @@ True
 ```
 
 ## 使用数据
-### 访问单个单元格（Accessing one cell）
+### 访问单个单元格
+### Accessing one cell
 现在，我们知道怎样方位一个worksheet了，现在我们来学习如何改变单元格的内容。
 
 我们可以直接通过worksheet的键值（key）方位单元格。
@@ -115,7 +116,8 @@ True
 
 
 
-### 访问多个单元格 (Accessing many cells)
+### 访问多个单元格 
+### Accessing many cells
 
 单元格区块(Ranges of cells)可以通过切片方式访问。
 
@@ -227,13 +229,13 @@ The simplest and safest way to save a workbook is by using the openpyxl.workbook
 >>> wb.save('balances.xlsx')
 ```
 
-> **Warning**
+> ### Warning
 > 该操作会覆盖已存在的文件，并且没有warning提示。
 
 <br>
 
 
-> **Note** 
+> ### Note
 >>Extension is not forced to be xlsx or xlsm, although you might have some trouble opening it directly with another application if you don’t use an official extension.
 >>
 >>As OOXML files are basically ZIP files, you can also end the filename with .zip and open it with your favourite ZIP archive manager.
@@ -289,7 +291,8 @@ The simplest and safest way to save a workbook is by using the openpyxl.workbook
 >>```
 
 
-## 加载一个文件(Loading from a file)
+## 加载一个文件
+## Loading from a file
 与保存文件一样，你可以通过导入`openpyxl.load_workbook()`开打一个已存在的workbook:
 
 ```python
