@@ -210,3 +210,6 @@ If you’re trying to use a formula that isn’t known this could be because you
 >>> ws.column_dimensions.group('A','D', hidden=True)
 >>> wb.save('group.xlsx')
 ```
+
+[<-  Previous  ](tutorial.md) 
+[  Next    ->  ](charts/introduction.md)
