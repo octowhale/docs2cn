@@ -1,4 +1,4 @@
-# 简单用例Simple usage
+# 简单用例
 
 ## 编辑工作簿
 
@@ -46,58 +46,62 @@ AA
 
 
 ### Write a workbook from *.xltx as *.xlsx
-### 读取xltx模板并保存到xlsx文件
+### 读取xltx模板并另存为xlsx文件
 
 ```python
 >>> from openpyxl import load_workbook
 >>>
 >>>
->>> wb = load_workbook('sample_book.xltx') 
->>> ws = wb.active 
->>> ws['D2'] = 42 
+>>> wb = load_workbook('sample_book.xltx')      # 读取xltx文件
+>>> ws = wb.active      # 获取工作表
+>>> ws['D2'] = 42       # 为单元格赋值
 >>>
->>> wb.save('sample_book.xlsx') 
+>>> wb.save('sample_book.xlsx') # 保存文件
 >>>
->>> # or you can overwrite the current document template
+>>> # 你也可以覆盖当前的文件模板
 >>> # wb.save('sample_book.xltx')
 ```
 
-## Write a workbook from *.xltm as *.xlsm
+
+## 读取xltm模板并另存为xlsm文件
 
 ```python
 >>> from openpyxl import load_workbook
 >>>
 >>>
->>> wb = load_workbook('sample_book.xltm', keep_vba=True) 
+>>> wb = load_workbook('sample_book.xltm', keep_vba=True) # keep_vba=True 保留vba代码
 >>> ws = wb.active 
 >>> ws['D2'] = 42 
 >>>
 >>> wb.save('sample_book.xlsm') 
 >>>
->>> # or you can overwrite the current document template
+>>> # 你也可以覆盖当前的文件模板
 >>> # wb.save('sample_book.xltm')
 ```
 
-### Read an existing workbook
+### 读取一个已存在的工作簿
 
 ```python
 >>> from openpyxl import load_workbook
->>> wb = load_workbook(filename = 'empty_book.xlsx')
->>> sheet_ranges = wb['range names']
->>> print(sheet_ranges['D18'].value)
+>>> wb = load_workbook(filename = 'empty_book.xlsx')    # 加载工作簿
+>>> sheet_ranges = wb['range names']        # 使用名为"range names"的工作表
+>>> print(sheet_ranges['D18'].value)        # 打印单元格的值
 3
 ```
 
-**Note**
 
+>###**注意**
+>>
 There are several flags that can be used in load_workbook.
+>>使用load_workbook时，有几个标记(flag)可以用。
+>>
+>> 1. guess_types : 当读取单元格信息时，是否使用推测单元格类型功能，默认为`不推测 False`。
+>> 2. data_only ：控制读取单元格时是否保留公式(formulae)，默认为`保留 False`。或者直接读取单元格所存的最终值。
+>> 3. keep_vba : 是否保留Visual Basic元素功能，默认为`不保留 False`。即使VB元素被保留，也不能被编辑。
 
-guess_types will enable or disable (default) type inference when reading cells.
-data_only controls whether cells with formulae have either the formula (default) or the value stored the last time Excel read the sheet.
-keep_vba controls whether any Visual Basic elements are preserved or not (default). If they are preserved they are still not editable.
-Warning
-
-openpyxl does currently not read all possible items in an Excel file so images and charts will be lost from existing files if they are opened and saved with the same name.
+>###**Warning**
+>>
+>> openpyxl does currently not read all possible items in an Excel file so images and charts will be lost from existing files if they are opened and saved with the same name.
 
 ##Using number formats
 
