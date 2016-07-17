@@ -5,8 +5,12 @@
 ----
 
 ##2D面积图
-Area charts are similar to line charts with the addition that the area underneath the plotted line is filled. Different variants are available by setting the grouping to “standard”, “stacked” or “percentStacked”; “standard” is the default.
 
+Area charts are similar to line charts with the addition that the area underneath the plotted line is filled. Different variants are available by setting the grouping to “standard”, “stacked” or “percentStacked”; “standard” is the default.
+ 
+面积图与线性图类似；描绘的线下面进行填充，用面来表示。通过设置`grouping`不同的值(`chart.grouping="standard"`)绘制不同的面积图，包括"standard","stacked","percentStacked"，默认为 standard。
+
+```python
 from openpyxl import Workbook
 from openpyxl.chart import (
     AreaChart,
@@ -27,29 +31,34 @@ rows = [
     [7, 50, 10],
 ]
 
-for row in rows:
-    ws.append(row)
+for row in rows:            # 为worksheet写入多行数据
+    ws.append(row)          # 将list作为一行数据写入worksheet中
 
-chart = AreaChart()
-chart.title = "Area Chart"
-chart.style = 13
-chart.x_axis.title = 'Test'
-chart.y_axis.title = 'Percentage'
+chart = AreaChart()         # 创建 2D图表 对象
+chart.title = "Area Chart"  # 设置图表标题
+chart.style = 13            # 设置图标风格
+# chart.grouping="standard"   # 设置图表 grouping 类型
+chart.x_axis.title = 'Test'     # 设置x轴名称
+chart.y_axis.title = 'Percentage'   # 设置y轴名称
 
-cats = Reference(ws, min_col=1, min_row=1, max_row=7)
-data = Reference(ws, min_col=2, min_row=1, max_col=3, max_row=7)
-chart.add_data(data, titles_from_data=True)
-chart.set_categories(cats)
+cats = Reference(ws, min_col=1, min_row=1, max_row=7)       # 关联分类数据的值
+data = Reference(ws, min_col=2, min_row=1, max_col=3, max_row=7)    # 关联构图数据的值
+chart.add_data(data, titles_from_data=True)     # 为图表添加数据        
+chart.set_categories(cats)      # 为图表添加分类
 
-ws.add_chart(chart, "A10")
+ws.add_chart(chart, "A10")      # 设置图表位置
 
 wb.save("area.xlsx")
-"Sample area charts"
+```
+
+!["Sample area charts"](http://docs.uyinn.com/openpyxl.readthedocs.io/en/default/_images/area.png)
 
 
 ##3D面积图
-You can also create 3D area charts
 
+创建3D面积图
+
+```python
 from openpyxl import Workbook
 from openpyxl.chart import (
     AreaChart3D,
@@ -71,23 +80,30 @@ rows = [
 ]
 
 for row in rows:
-    ws.append(row)
+    ws.append(row)      # 绘制单元格数据
 
-chart = AreaChart3D()
-chart.title = "Area Chart"
+chart = AreaChart3D()           # 创建 3D面积图 对象           
+chart.title = "Area Chart"      
 chart.style = 13
 chart.x_axis.title = 'Test'
 chart.y_axis.title = 'Percentage'
 chart.legend = None
 
-cats = Reference(ws, min_col=1, min_row=1, max_row=7)
-data = Reference(ws, min_col=2, min_row=1, max_col=3, max_row=7)
+cats = Reference(ws, min_col=1, min_row=1, max_row=7)       # 关联分类数据的值
+data = Reference(ws, min_col=2, min_row=1, max_col=3, max_row=7)    #关联构图数据的值
 chart.add_data(data, titles_from_data=True)
 chart.set_categories(cats)
 
 ws.add_chart(chart, "A10")
 
 wb.save("area3D.xlsx")
-This produces a simple 3D area chart where third axis can be used to replace the legend:
+```
 
-"Sample 3D area chart with a series axis"
+
+这样就创建了一个简单的 3D面积图。 面积图的 Z轴 可以用来作为数据说明。
+
+!["Sample 3D area chart with a series axis"](http://docs.uyinn.com/openpyxl.readthedocs.io/en/default/_images/area3D.png)
+
+----
+
+^[ <-Previous ]( ./introduction.md )  |  [ Next-> ]( ./bar.md )|

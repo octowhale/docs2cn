@@ -1,4 +1,4 @@
-# Charts
+# 图表
 [Charts](https://openpyxl.readthedocs.io/en/default/charts/introduction.html)
 
 ----
@@ -18,8 +18,8 @@ The following charts are available:
 以下图表类型可用：
 
 * [ 面积图  ](./area.md)
-    * [ 2D Area Charts ]( ./area.md#2D面积图 )
-    * [ 3D Area Charts ]( ./area.md#3D面积图 )
+    * [ 2D Area Charts ](./area.md#2D面积图)
+    * [ 3D Area Charts ](./area.md#3D面积图)
 * Bar and Column Charts
     * Vertical, Horizontal and Stacked Bar Charts
     * 3D Bar Charts
