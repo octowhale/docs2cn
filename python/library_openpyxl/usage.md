@@ -1,4 +1,7 @@
-# 简单用例
+# 简单用例 
+[ Simple Usage ]( https://openpyxl.readthedocs.io/en/default/usage.html )
+
+----
 
 ## 编辑工作簿
 
@@ -94,7 +97,9 @@ AA
 >> 使用load_workbook时，有几个标记(flag)可以用。
 >>
 >> 1. guess_types : 当读取单元格信息时，是否启用推测单元格格式，默认为`不启用 False`。
+>>
 >> 2. data_only ：控制读取单元格时是否保留公式(formulae)，默认为`保留 False`。或者直接读取单元格所存的最终值。
+>>
 >> 3. keep_vba : 是否保留Visual Basic元素功能，默认为`不保留 False`。即使VB元素被保留，也不能被编辑。
 
 <br>
@@ -214,4 +219,4 @@ If you’re trying to use a formula that isn’t known this could be because you
 
 ----
 
-^[<-Previous](tutorial.md)  |  [Next->](charts/introduction.md)|
+^[ <-Previous ]( tutorial.md )  |  [ Next-> ]( ./charts/introduction.md )|
