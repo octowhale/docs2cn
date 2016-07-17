@@ -91,8 +91,7 @@ AA
 
 >###**Note**
 >>
-There are several flags that can be used in load_workbook.
->>使用load_workbook时，有几个标记(flag)可以用。
+>> 使用load_workbook时，有几个标记(flag)可以用。
 >>
 >> 1. guess_types : 当读取单元格信息时，是否启用推测单元格格式，默认为`不启用 False`。
 >> 2. data_only ：控制读取单元格时是否保留公式(formulae)，默认为`保留 False`。或者直接读取单元格所存的最终值。
@@ -104,6 +103,8 @@ There are several flags that can be used in load_workbook.
 >>
 >> openpyxl 目前不能完全读取Excel文件中的所有项目， 因此在打开和保存过程中使用相同的文件名，图片和图表会被丢失。
 >> 
+
+
 <br>
 
 
@@ -160,7 +161,7 @@ True
 <type 'frozenset'>
 ```
 
-If you’re trying to use a formula that isn’t known this could be because you’re using a formula that was not included in the initial specification. Such formulae must be prefixed with xlfn. to work.
+If you’re trying to use a formula that isn’t known this could be because you’re using a formula that was not included in the initial specification. Such formulae must be prefixed with `xlfn.` to work.
 
 如果你尝试使用一个并不常用的公式，可能这个公式没有包含在初始规范中。这种公式必须使用前缀`xlfn.`才能正常工作。
 
@@ -211,5 +212,6 @@ If you’re trying to use a formula that isn’t known this could be because you
 >>> wb.save('group.xlsx')
 ```
 
-[<-  Previous  ](tutorial.md) 
-[  Next    ->  ](charts/introduction.md)
+----
+
+^[<-Previous](tutorial.md)  |  [Next->](charts/introduction.md)|
