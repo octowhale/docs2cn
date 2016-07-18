@@ -20,10 +20,10 @@ The following charts are available:
 * [ 面积图  ](./area.md)
     * [ 2D Area Charts ](./area.md#2D面积图)
     * [ 3D Area Charts ](./area.md#3D面积图)
-* Bar and Column Charts
-    * Vertical, Horizontal and Stacked Bar Charts
-    * 3D Bar Charts
-* Bubble Charts
+* [Bar and Column Charts](./bar.md)
+    * [Vertical, Horizontal and Stacked Bar Charts](bar.md#vertical-horizontal-and-stacked-bar-charts)
+    * [3D Bar Charts](./bar.md#3d-bar-charts)
+* [Bubble Charts]( ./bubble.md )
 * Line Charts
     * Line Charts
     * 3D Line Charts

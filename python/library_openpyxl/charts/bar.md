@@ -7,7 +7,7 @@
 柱状图会绘制水平或者垂直的数据列。
 
 ## Vertical, Horizontal and Stacked Bar Charts
-垂直、水平、堆栈柱状图
+## 垂直、水平、堆栈柱状图
 
 >###**Note**
 >
@@ -137,3 +137,7 @@ wb.save("bar3d.xlsx")
 
 
 !["Sample 3D bar chart"](http://docs.uyinn.com/openpyxl.readthedocs.io/en/default/_images/bar3D.png)
+
+----
+
+^[ <-Previous ]( ./bar.md )  |  [ Next-> ]( ./bubble.md )|
