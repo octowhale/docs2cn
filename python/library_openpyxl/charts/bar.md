@@ -1,19 +1,24 @@
 # Bar and Column Charts
 [Bar and Column Charts](https://openpyxl.readthedocs.io/en/default/charts/bar.html)
-In bar charts values are plotted as either horizontal bars or vertical columns.
+
+----
+
+
+柱状图会绘制水平或者垂直的数据列。
 
 ## Vertical, Horizontal and Stacked Bar Charts
+垂直、水平、堆栈柱状图
 
 >###**Note**
 >
->The following settings affect the different chart types.
+> 以下设置将影响不同类型的柱状图。
+> 通过分别设置type的值为`bar或col`从而使用垂直`type=col`或水平`type=bar`柱状图。
 >
->Switch between vertical and horizontal bar charts by setting type to col or bar respectively.
+> 当使用堆栈柱状图时，overlap的值需要设置为100。`overlap=100`
 >
->When using stacked charts the overlap needs to be set to 100.
->
->If bars are horizontal, x and y axes are revesed.
-><bar>
+> 如果是水平柱状图，x和y轴将颠倒。
+
+<br>
 
 
 !["Sample bar charts"](http://docs.uyinn.com/openpyxl.readthedocs.io/en/default/_images/bar.png)
@@ -37,48 +42,48 @@ rows = [
 ]
 
 
-for row in rows:
+for row in rows:            # 添加单元格绘图数据
     ws.append(row)
 
 
-chart1 = BarChart()
-chart1.type = "col"
-chart1.style = 10
-chart1.title = "Bar Chart"
-chart1.y_axis.title = 'Test number'
-chart1.x_axis.title = 'Sample length (mm)'
+chart1 = BarChart()         # 创建  2D柱状图 对象
+chart1.type = "col"         # 柱状图type=col，垂直图。
+chart1.style = 10           # style显示不同的风格
+chart1.title = "Bar Chart"                      # 图形名称
+chart1.y_axis.title = 'Test number'             # y轴名称
+chart1.x_axis.title = 'Sample length (mm)'      # x名称
 
-data = Reference(ws, min_col=2, min_row=1, max_row=7, max_col=3)
-cats = Reference(ws, min_col=1, min_row=2, max_row=7)
-chart1.add_data(data, titles_from_data=True)
+data = Reference(ws, min_col=2, min_row=1, max_row=7, max_col=3)        # 关联图形数据
+cats = Reference(ws, min_col=1, min_row=2, max_row=7)                   # 关联数据分类
+chart1.add_data(data, titles_from_data=True)            # 数据标题从titles_from_data=True获取，即数据单元格组的第一行
 chart1.set_categories(cats)
 chart1.shape = 4
-ws.add_chart(chart1, "A10")
+ws.add_chart(chart1, "A10")         # 生成柱状图及定位
 
-from copy import deepcopy
+from copy import deepcopy           
 
-chart2 = deepcopy(chart1)
+chart2 = deepcopy(chart1)           # deepcopy ，之后直接修改部分属性
 chart2.style = 11
-chart2.type = "bar"
-chart2.title = "Horizontal Bar Chart"
+chart2.type = "bar"                 # 水平柱状图
+chart2.title = "Horizontal Bar Chart"   
 
-ws.add_chart(chart2, "G10")
+ws.add_chart(chart2, "G10")          # 生成柱状图及定位
 
 
-chart3 = deepcopy(chart1)
-chart3.type = "col"
+chart3 = deepcopy(chart1)           # deepcopy ，之后直接修改部分属性
+chart3.type = "col"                 # 水平柱状图
 chart3.style = 12
-chart3.grouping = "stacked"
-chart3.overlap = 100
+chart3.grouping = "stacked"         # 类型为堆栈
+chart3.overlap = 100                # 必须设置内容
 chart3.title = 'Stacked Chart'
 
-ws.add_chart(chart3, "A27")
+ws.add_chart(chart3, "A27")         # 生成柱状图及定位
 
 
 chart4 = deepcopy(chart1)
-chart4.type = "bar"
+chart4.type = "bar"                 # 水平柱状图
 chart4.style = 13
-chart4.grouping = "percentStacked"
+chart4.grouping = "percentStacked"  # 类型 百分比堆栈
 chart4.overlap = 100
 chart4.title = 'Percent Stacked Chart'
 
@@ -87,10 +92,14 @@ ws.add_chart(chart4, "G27")
 wb.save("bar.xlsx")
 ```
 
-This will produce four charts illustrating the various possibilities.
+这样便生成了4种不同类型的柱状图。
+
 
 ## 3D Bar Charts
-You can also create 3D bar charts
+## 3D柱状图
+
+
+可以生成3D柱状图。
 
 ```python
 from openpyxl import Workbook
@@ -115,7 +124,7 @@ for row in rows:
 
 data = Reference(ws, min_col=2, min_row=1, max_col=3, max_row=4)
 titles = Reference(ws, min_col=1, min_row=2, max_row=4)
-chart = BarChart3D()
+chart = BarChart3D()                    # 创建 3D柱状图 对象
 chart.title = "3D Bar Chart"
 chart.add_data(data=data, titles_from_data=True)
 chart.set_categories(titles)
@@ -123,8 +132,8 @@ chart.set_categories(titles)
 ws.add_chart(chart, "E5")
 wb.save("bar3d.xlsx")
 ```
-python
-This produces a simple 3D bar chart
+
+如此便生成了一个简单的 3D柱状图
 
 
 !["Sample 3D bar chart"](http://docs.uyinn.com/openpyxl.readthedocs.io/en/default/_images/bar3D.png)
