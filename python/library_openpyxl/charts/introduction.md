@@ -24,9 +24,9 @@ The following charts are available:
     * [Vertical, Horizontal and Stacked Bar Charts](bar.md#vertical-horizontal-and-stacked-bar-charts)
     * [3D Bar Charts](./bar.md#3d-bar-charts)
 * [Bubble Charts]( ./bubble.md )
-* Line Charts
-    * Line Charts
-    * 3D Line Charts
+* [Line Charts]( ./line.md )
+    * [Line Charts]( ./line.md )
+    * [3D Line Charts]( ./line.md )
 * Scatter Charts
 * Pie Charts
     * Pie Charts
