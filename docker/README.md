@@ -5,5 +5,5 @@
 + [安装](./chapter-01-install-docker-with-centos.md#安装)
   + [使用yum安装](./chapter-01-install-docker-with-centos.md#使用yum安装)
   + [使用脚本安装](./chapter-01-install-docker-with-centos.md#使用脚本安装)
-+ [设置docker daemon为开机启动](./chapter-01-install-docker-with-centos.md#设置docker daemon为开机启动)
++ [设置docker daemon为开机启动](./chapter-01-install-docker-with-centos.md#设置docker-daemon为开机启动)
 + [卸载](./chapter-01-install-docker-with-centos.md#卸载)
