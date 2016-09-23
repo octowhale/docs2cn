@@ -8,7 +8,7 @@ Docker在 CentOS7.X上运行。Docker可能在其他EL7的兼容版本中成功�
 
 本文将指导你使用Docker-managed发布的安装包进行安装。这样可以确保你安装的docker是最近版本的。
 
-##准备工作
+##系统环境要求
 
 docker必须运行在64-bit的系统上，对于CentOS的版本号并没有特别要求。另外，如果需要在CentOS上安装，内核版本必须高于3.10。
 
@@ -25,7 +25,7 @@ $ uname -r
 
 可以通过以下两种方法安装Docker Engine。使用 `yum`包管理器；使用 `curl`命令访问 `get.docker.com`网站。后者将获得一个安装脚本，该脚本将通过` yum `管理器安装Docker。
 
-###通过 yum 安装
+###使用yum安装
 
 1. 登录系统，并确认用户为` root `或者用户有权限使用` sudo `命令。
 2. 保证你现有的yum安装包是最新的。
@@ -88,7 +88,7 @@ For more examples and ideas, visit:
  
 ```
 
-###通过脚本安装
+###使用脚本安装
 
 3. 执行安装脚本
 
