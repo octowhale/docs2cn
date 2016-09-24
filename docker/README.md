@@ -19,3 +19,4 @@
 + [查找并运行镜像](./chapter02/02-find-and-run-the-whalesay-image.md)
 + 创建属于自己的镜像
   + [使用dockerfile创建镜像](./chapter02/03-build-your-own-image-via-dockerfile.md)
+  + [使用系统备份创建镜像](./chapter02/03-build-your-own-image-via-backup-package.md)
