@@ -1,5 +1,10 @@
 #了解docker镜像与容器
 
+> 2016-09-24
+
+[原文](https://docs.docker.com/engine/getstarted/step_two/#/learn-about-images-containers)
+
+
 docker引擎提供核心docker技术，从而实现镜像和容器。正如安装的最后一步，你执行` docker run hello-world `命令。这条命令分为三个部分：
 
 ![container_explainer](http://files.uyinn.com/media/docker/container_explainer.png)
