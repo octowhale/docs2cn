@@ -14,7 +14,7 @@
     + [使用脚本安装](./chapter01/01-install-docker-with-centos.md#使用脚本安装)
   + [设置docker daemon为开机启动](./chapter01/01-install-docker-with-centos.md#设置docker-daemon为开机启动)
   + [卸载](./chapter01/01-install-docker-with-centos.md#卸载)
-+ [C01S02 使用源码便宜安装](./chapter01/02-installation-from-binaries.md)
++ [C01S02 使用二进制文件安装docker](./chapter01/02-installation-from-binaries.md)
 
 
 ## 第2章 使用Docker

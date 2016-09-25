@@ -147,5 +147,5 @@ docker daemon一直是使用root用户权限运行的，而且现在docker daemo
 ```
 $ killall docker
 ```
-然后按照[常规安装步骤](#获取Linux版的Docker Engine二进制文件)进程安装。
+然后按照[常规安装步骤](#获取linux版的docker-engine二进制文件)进程安装。
 
