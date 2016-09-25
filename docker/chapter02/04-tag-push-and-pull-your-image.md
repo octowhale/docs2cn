@@ -26,6 +26,7 @@ hello-world          latest       91c95931e552        5 weeks ago         910 B
 4. 使用 ` IMAGE ID `和` docker tag `命令标记你的`docker-whale`镜像。
 命令格式看起来像这样：
 ![tagger.png](http://files.uyinn.com/media/docker/tagger.png)
+
 当然，账号必须是你自己的。之后使用包含镜像的ID和用户名的命令进行标记。
 ```
 $ docker tag 7d9495d03763 maryatdocker/docker-whale:latest
