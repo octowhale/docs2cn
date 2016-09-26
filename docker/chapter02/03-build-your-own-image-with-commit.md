@@ -193,7 +193,7 @@ f5ebc85e514f        octowhale/centos7:whalesay   "/root/whalesay.sh 'r"   42 sec
 72eff9a6d353        octowhale/centos7:whalesay   "/root/whalesay.sh"      2 minutes ago       Exited (0) 2 minutes ago                        sharp_curie
 ```
 第二次和第三次启动容器, 屏幕终于数据信息了. 通过观察, 我们可以看到. 这两次启动容器较第一次还多使用了一个参数 ` /root/whalesay.sh `. 而这个就是我们之前所创建的.
-这也就是通过commit创建容器的一个小缺陷, ** 不能自动执行命令或添加entrypoint **
+这也就是通过commit创建容器的一个小缺陷, **不能自动执行命令或添加entrypoint**
 
 ## commit创建镜像的不足
 
