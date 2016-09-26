@@ -107,3 +107,7 @@ $ docker run octowhale/centos7:whalesay-import-file /root/whalesay.sh "that's al
 ## 存在的问题
 > 和通过容器commit创建镜像一样，使用import创建镜像也不能指定自动运行命令或entrypint。
 > 如有有需要，则再次使用dockerfile包装；或者使用系统本身的功能完成。
+
+
+> **注意**：此问题已经在docker1.11.1及之后的版本得到解决，具体操作方式参考[使用`docker commit -c string`实现](./03-build-your-own-image-with-commit.md#commit创建镜像时添加自动运行CMD和entrypoint)
+

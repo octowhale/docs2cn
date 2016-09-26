@@ -199,4 +199,68 @@ f5ebc85e514f        octowhale/centos7:whalesay   "/root/whalesay.sh 'r"   42 sec
 
 > **注意**: 如果一定要添加自动命令或entrypint的话, 目前好像只能再使用一次dockerfile 将刚才创建的镜像再包装一次. 方法可以参考stackoverflow上的[docker-commit-created-images-and-entrypoint](http://stackoverflow.com/questions/29015023/docker-commit-created-images-and-entrypoint/29015976#29015976)
 
+> ** 注意**: 此问题已经在docker1.11.1及以后的版本中得到解决，[使用`docker commit -c string`实现](#commit创建镜像时添加自动运行CMD和entrypoint)
+
+## commit创建镜像时添加自动运行CMD和entrypoint
+
+之前的测试中我们看到，虽然通过commit创建了新的镜像，但是` whalesay.sh `并不能自己运行。因此，我们需要在commit的时候为镜像添加CMD或entrypoint
+
+在docker 1.11.1版本后，` docker commit `增加了一个参数 `-c, --change value     Apply Dockerfile instruction to the created image (default [])`。该参数可以为创建后镜像添加一些启动操作。
+使用 ` docker commit -h ` 命令，查看当前版本的docker是否支持 ` -c ; --change string ` 选项。
+
+
+```
+
+$ docker commit --change='ENTRYPOINT ["/root/whalesay.sh"]' d122c7798ec1 octowhale/centos7:whalesay-change-entrypoint
+sha256:c0523888da6bd0149a57414d9d2bdce2019f6d4fa69690e795a675a9b3b0cbc0
+
+$ docker commit --change='CMD ["/root/whalesay.sh"]' d122c7798ec1 octowhale/centos7:whalesay-change-cmd-v2
+sha256:70d5e994e059e7bbffcf1f9ead4f17d7750c56078b2f7f2191d8d5d9a514c67f
+
+$ docker commit --change='CMD /root/whalesay.sh "hello world"' d122c7798ec1 octowhale/centos7:whalesay-change-cmd-v4
+sha256:216b5d379710d7a43457b32f0a3424258145d787335cc154a8cbaaccea1f68a9
+
+$ docker images
+REPOSITORY                    TAG                          IMAGE ID            CREATED              SIZE
+octowhale/centos7             whalesay-change-cmd-v4       216b5d379710        58 seconds ago       474.6 MB
+octowhale/centos7             whalesay-change-cmd-v3       79837576d3d4        About a minute ago   474.6 MB
+octowhale/centos7             whalesay-change-cmd-v2       70d5e994e059        25 minutes ago       474.6 MB
+octowhale/centos7             whalesay-change-cmd          94fe1aa155a7        26 minutes ago       474.6 MB
+octowhale/centos7             whalesay-change-entrypoint   c0523888da6b        29 minutes ago       474.6 MB
+
+$ docker run c0523888da6b 
+ _____
+<  >
+ -----
+    \
+     \
+      \     
+                    ##        .            
+              ## ## ##       ==            
+           ## ## ## ##      ===            
+       /""""""""""""""""___/ ===        
+  ~~~ {~~ ~~~~ ~~~ ~~~~ ~~ ~ /  ===- ~~~   
+       \______ o          __/            
+        \    \        __/             
+          \____\______/   
+
+#
+
+$ docker run octowhale/centos7:whalesay-change-cmd-v4
+ _____
+< hello world >
+ -----
+    \
+     \
+      \     
+                    ##        .            
+              ## ## ##       ==            
+           ## ## ## ##      ===            
+       /""""""""""""""""___/ ===        
+  ~~~ {~~ ~~~~ ~~~ ~~~~ ~~ ~ /  ===- ~~~   
+       \______ o          __/            
+        \    \        __/             
+          \____\______/   
+```
+
 
