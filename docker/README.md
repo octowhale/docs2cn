@@ -1,6 +1,7 @@
 # DOCKER 官网文档汉化
 
 > 2016-09-23
+>
 > 并不是把所有文章都翻译了，进根据学习程度不定时更新
 > 翻译水平有限，肯定会有翻译错误和句子不通顺的地方
 
@@ -21,7 +22,8 @@
 + [C02S01 理解镜像与容器](./chapter02/01-learn-about-images-containers.md)
 + [C02S02 查找并运行镜像](./chapter02/02-find-and-run-the-whalesay-image.md)
 + C02S03 创建属于自己的镜像
-  + [C02S03.1 使用dockerfile创建镜像](./chapter02/03-build-your-own-image-via-dockerfile.md)
-  + [C02S03.2 使用系统备份创建镜像](./chapter02/03-build-your-own-image-via-backup-package.md)
+  + [C02S03.1 使用dockerfile创建镜像](./chapter02/03-build-your-own-image-with-dockerfile.md)
+  + [C02S03.2 使用commit提交容器创建镜像](./chapter02/03-build-your-own-image-with-commit.md)
+  + [C02S03.3 使用import导入备份创建镜像](./chapter02/03-build-your-own-image-with-import.md)
 + [C02S04 标记、推送、下载(tag-push-pull image)](./chapter02/04-tag-push-and-pull-your-image.md)
 
