@@ -111,3 +111,7 @@ $ docker run octowhale/centos7:whalesay-import-file /root/whalesay.sh "that's al
 
 > **注意**：此问题已经在docker1.11.1及之后的版本得到解决，具体操作方式参考[使用`docker commit -c string`实现](./03-build-your-own-image-with-commit.md##commit创建镜像时添加自动运行cmd和entrypoint)
 
+
+## 系统模板
+
+访问[openvz系统模板页面](https://openvz.org/Download/template/precreated)。该页面提供主流linux发行版的系统模板。使用 ` docker import ` 命令可制作镜像。
