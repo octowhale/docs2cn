@@ -1,6 +1,6 @@
 # 使用commit提交容器创建镜像
 
-> 2016-09-26
+> 2016-09-26 octowhale#github
 
 
 dockerfile是告诉docker按照步骤从基本镜像构建新镜像。
@@ -28,7 +28,7 @@ $ docker run -t -i centos /bin/bash
 ```
 **注意**： -t 为容器打开一个tty。-i 则是保持。
 
-4. 在容器内创建我们需要执行的操作，这里创建一个 ` whalesay.sh `。 [whalesay.sh文件](./whalesay.sh)
+4. 在容器内创建我们需要执行的操作，这里创建一个 [whalesay.sh文件](./script/whalesay.sh) 。 
 ```
 [root@34dc47734372 ~]#  cat /root/whalesay.sh
 
