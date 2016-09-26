@@ -199,7 +199,7 @@ f5ebc85e514f        octowhale/centos7:whalesay   "/root/whalesay.sh 'r"   42 sec
 
 > **注意**: 如果一定要添加自动命令或entrypint的话, 目前好像只能再使用一次dockerfile 将刚才创建的镜像再包装一次. 方法可以参考stackoverflow上的[docker-commit-created-images-and-entrypoint](http://stackoverflow.com/questions/29015023/docker-commit-created-images-and-entrypoint/29015976#29015976)
 
-> ** 注意**: 此问题已经在docker1.11.1及以后的版本中得到解决，[使用`docker commit -c string`实现](#commit创建镜像时添加自动运行CMD和entrypoint)
+> ** 注意**: 此问题已经在docker1.11.1及以后的版本中得到解决，[使用`docker commit -c string`实现](#commit创建镜像时添加自动运行cmd和entrypoint)
 
 ## commit创建镜像时添加自动运行CMD和entrypoint
 
