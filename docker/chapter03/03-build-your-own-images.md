@@ -395,7 +395,9 @@ Successfully built 97feabe5d2ed
 
 ` docker build ` 具体是怎么工作的呢？
 首先， 向docker daemon上传本地环境信息，基本上就是用来执行building的目录信息。 docker daemon实际上是在本地环境内创建镜像的。
+
 其次， 你可以看到 ` Dockerfile ` 中的每一条指令都依次执行。值得注意的是**每一步(每一条指令)都创建了一个容器，并在容器内执行指令，最后commit容器的变化**，就像你之前使用 ` docker commit ` 一样。 当所有指令都被执行之后，生成最终镜像。这里为 `97feabe5d2ed` ， 并且被标记为 ` ouruser/sinatra:v2 `。
+
 最后， 所有中间容器会被清除。
 
 > **注意**： 一个镜像不能超过127层。该限制主要是为了鼓励优化镜像。
@@ -409,9 +411,10 @@ root@8196968dac35:/#
 
 > **注意**： 这只是一个简单的` docker build ` 案例，省略了很多关键字。 在以后的章节中会学习更多的创建指令。 访问[Best Practices guide](https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/)学习更多Dockerfile的指令。
 
+> 更多关于dockerfile创建镜像的信息，可以参考[C02S03.1 使用dockerfile创建镜像](../chapter02/03-build-your-own-image-with-dockerfile.md)
 
 ## 为镜像设置tag
-使用 ` docker tag ` 为已存在的镜像镜像设置新的TAG。
+使用 ` docker tag ` 为已存在的镜像设置新的TAG。
 ```
 $ docker tag 5db5f8471261 ouruser/sinatra:devel
 ```
@@ -448,7 +451,7 @@ ouruser/sinatra   latest   sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2
 > octowhale/centos7             whalesay-change-cmd-v4       <none>               216b5d379710        3 days ago          474.6 MB
 > ```
 
-由于digest具有唯一性，你也可以**使用digest进行镜像操作**，包括 ` creaste, run, rmi ` 等命令。也可以用在 `Dockerfile中的FROM中`。
+由于digest具有唯一性，你也可以**使用digest进行镜像操作**，包括 ` create, run, rmi ` 等命令。也可以用在 `Dockerfile中的FROM中`。
 
 
 ## push镜像到Docker Hub
@@ -467,7 +470,7 @@ Pushing repository ouruser/sinatra (3 tags)
 
 ## 从本地计算机中删除镜像
 
-你可以使用 ` docker rmi ` 命令删除本地计算机上的[相似镜像](https://docs.docker.com/engine/tutorials/usingdocker/)
+你可以使用 ` docker rmi ` 命令删除本地计算机上的[相似镜像](../chapter03/02-run-a-simple-application.md)
 
 删除 ` training/sinatra `
 ```
