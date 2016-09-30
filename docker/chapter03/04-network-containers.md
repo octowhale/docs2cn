@@ -64,7 +64,10 @@ web
 ```
 
 ## 使用默认网络配置启动容器
-通过使用**网络驱动**，docker包含了对容器网络的支持。默认情况下，docker为容器提供了两种网络模式： ` 桥接(bridge) 和 覆盖(overlay) `。 你也可以使用自定义网络驱动插件创建自定义的网络支持，不过这属于高级行为。
+通过使用**网络驱动**，docker包含了对容器网络的支持。默认情况下，docker为容器提供了两种网络模式： ` 桥接(bridge)网络 和 覆盖(overlay)网络 `。 你也可以使用自定义网络驱动插件创建自定义的网络支持，不过这属于高级行为。
+
+> 维基百科中关于 [overlay network](https://en.wikipedia.org/wiki/Overlay_network) 的页面
+> An overlay network is a computer network that is built on top of another network. Nodes in the overlay network can be thought of as being connected by virtual or logical links, each of which corresponds to a path, perhaps through many physical links, in the underlying network. 
 
 Docker Engine包含三种网络模式，使用 ` docker network ` 命令查看：
 ```
@@ -244,7 +247,7 @@ docker允许一个容器加入多个不同的网络，可以在容器运行时�
 $ docker network connect my-bridge-network 
 ```
 
-重新进入db容器，并ping web容器，这次使用容器名web而非使用容器IP地址：
+重新进入db容器，并ping web容器，这次使用容器名web替代使用容器IP地址：
 ```
 $ docker exec -it db bash
 
