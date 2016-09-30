@@ -21,7 +21,7 @@
 ## 第2章 使用Docker
 + [C02S01 理解镜像与容器](./chapter02/01-learn-about-images-containers.md)
 + [C02S02 查找并运行镜像](./chapter02/02-find-and-run-the-whalesay-image.md)
-+ C02S03 创建属于自己的镜像
++ C02S03 创建自定义镜像
   + [C02S03.1 使用dockerfile创建镜像](./chapter02/03-build-your-own-image-with-dockerfile.md)
   + [C02S03.2 使用commit提交容器创建镜像](./chapter02/03-build-your-own-image-with-commit.md)
   + [C02S03.3 使用import导入备份创建镜像](./chapter02/03-build-your-own-image-with-import.md)
@@ -31,5 +31,6 @@
 ## 第3章 通过案例学docker
 + [C03S01 容器中的Hello World](./chapter03/01-hello-world-in-a-container.md)
 + [C03S02 运行一个简单的应用](./chapter03/02-run-a-simple-application.md)
-+ [C03S03 创建属于自己的镜像](./chapter03/03-build-your-own-images.md)
-+ [C03S04 容器的网络连接](./chapter03/04-network-containers.md)
++ [C03S03 创建自定义镜像](./chapter03/03-build-your-own-images.md)
++ [C03S04 管理容器的网络连接](./chapter03/04-network-containers.md)
++ [C03S04 管理容器的数据](./chapter03/05-manage-data-in-containers.md)
