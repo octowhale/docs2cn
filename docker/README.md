@@ -34,3 +34,4 @@
 + [C03S03 创建自定义镜像](./chapter03/03-build-your-own-images.md)
 + [C03S04 管理容器的网络连接](./chapter03/04-network-containers.md)
 + [C03S05 管理容器的数据](./chapter03/05-manage-data-in-containers.md)
++ [C03S06 管理DockerHub中的容器](./chapter03/06-store-images-on-docker-hub.md)
