@@ -33,4 +33,4 @@
 + [C03S02 运行一个简单的应用](./chapter03/02-run-a-simple-application.md)
 + [C03S03 创建自定义镜像](./chapter03/03-build-your-own-images.md)
 + [C03S04 管理容器的网络连接](./chapter03/04-network-containers.md)
-+ [C03S04 管理容器的数据](./chapter03/05-manage-data-in-containers.md)
++ [C03S05 管理容器的数据](./chapter03/05-manage-data-in-containers.md)
